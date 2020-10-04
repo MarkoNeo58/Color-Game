@@ -1,13 +1,13 @@
-var numOfColors = 6;
-var colors = colorGenerator(numOfColors);
-var squares = document.querySelectorAll(".square");
-var colorDisplay = document.getElementById("colorDisplay");
-var resetBtn = document.querySelector("#reset");
-var easyBtn = document.querySelector("#btnEasy");
-var hardBtn = document.querySelector("#btnHard");
-var pickedColor = colorPicking();
-var h1 = document.getElementsByTagName("h1")[0];
-var statusMessage = document.getElementById("statusMessage");
+let numOfColors = 6;
+let colors = colorGenerator(numOfColors);
+let squares = document.querySelectorAll(".square");
+let colorDisplay = document.getElementById("colorDisplay");
+let resetBtn = document.querySelector("#reset");
+let easyBtn = document.querySelector("#btnEasy");
+let hardBtn = document.querySelector("#btnHard");
+let pickedColor = colorPicking();
+let h1 = document.getElementsByTagName("h1")[0];
+let statusMessage = document.getElementById("statusMessage");
 
 // adding picked color to h1
 colorDisplay.textContent = pickedColor;
@@ -19,7 +19,7 @@ for(let i=0; i<squares.length; i++){
     //adding click listeners to squares
     squares[i].addEventListener("click", function() {
         //grab color of clicked square
-        var clickedColor = this.style.backgroundColor;
+        let clickedColor = this.style.backgroundColor;
         //compare clicked to picked color
         if (pickedColor == clickedColor){
             //adding picked color to all squares
@@ -81,7 +81,7 @@ resetBtn.addEventListener("click", function(){
 
 // function that defines random color in colors array
 function colorPicking(){
-    var randomIndex = Math.floor(Math.random() * colors.length);
+    let randomIndex = Math.floor(Math.random() * colors.length);
     return colors[randomIndex];
 }
 
